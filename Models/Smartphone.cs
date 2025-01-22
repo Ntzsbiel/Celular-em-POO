@@ -25,7 +25,7 @@ namespace DesafioPOO.Models
             Console.WriteLine("Digite o número ou nome para fazer uma ligação");
             string ligacao = Console.ReadLine();
             Console.WriteLine($"Ligando para {ligacao}...");
-            Console.WriteLine("Pressione qualquer tecla para continuar");
+            Console.WriteLine("Pressione qualquer tecla para voltar");
             Console.ReadLine();
         }
 
@@ -44,20 +44,33 @@ namespace DesafioPOO.Models
             Console.Clear();
 
             DateTime hoje = DateTime.Now;
-            Console.WriteLine($"======={Modelo}======");
-            Console.WriteLine(hoje.ToString("dd/MM/yyyy, HH:mm"));
-            Console.WriteLine("Pressione qualquer tecla para continuar");
+            Console.WriteLine($"======={Modelo.ToUpper()}======");
+            Console.WriteLine(hoje.ToString("dd/MM/yyyy HH:mm"));
+            Console.WriteLine("Pressione qualquer tecla para voltar");
+            Console.ReadLine();
+        }
+
+        public void ExibirConfiguracoes()
+        {
+            Console.Clear();
+            Console.WriteLine($"========{Modelo.ToUpper()}=======");
+            Console.WriteLine($"Imei: {Imei}");
+            Console.WriteLine($"Número de telefone: {Numero}");
+            Console.WriteLine($"Armazenamento: {Memoria}GB");
+            Console.WriteLine("Pressione qualquer tecla para voltar");
             Console.ReadLine();
 
-
         }
+
         public virtual void InstalarAplicativo()
         {
             Console.Clear();
+            Console.WriteLine("Digite o nome da aplicação que deseja instalar");
             string nomeApp = Console.ReadLine();
             Console.WriteLine($"O Aplicativo {nomeApp} foi instalado no seu {Modelo} com sucesso");
-            Console.WriteLine("Pressione qualquer tecla para continuar");
+            Console.WriteLine("Pressione qualquer tecla para voltar");
             Console.ReadLine();
+
 
         }
     }

@@ -5,7 +5,7 @@ using DesafioPOO.Models;
 // Variável global para armazenar o smartphone selecionado
 Smartphone celularSelecionado = null;
 bool MenuSeleção = true;
-bool menuPrincipal = true;
+bool menuPrincipal = false;
 
 // -----------MENU DE BOAS VINDAS---------
 do
@@ -46,7 +46,7 @@ do
         case "3":
             Console.Clear();
             Console.WriteLine("Pressione qualquer tecla para sair...");
-            Console.ReadKey();
+            MenuSeleção = false;
             break;
     }
 
@@ -56,16 +56,18 @@ do
 if (celularSelecionado == null)
 {
     Console.WriteLine("Nenhum celular foi configurado.");
+    Console.ReadKey();
 }
 else
 {
+    menuPrincipal = true;
     Console.Clear();
     Console.WriteLine($"O Modelo do seu Celular é: {celularSelecionado.ExibirModelo()}");
     Console.WriteLine("             Iniciando...");
     Console.WriteLine("Clique em qualquer tecla para continuar...");
     Console.ReadLine();
 }
-
+//-----------MENU PRINCIPAL DO CELULAR----------
 while (menuPrincipal)
 {
 
@@ -75,9 +77,10 @@ while (menuPrincipal)
     Console.WriteLine("2 - Ligar");
     Console.WriteLine("3 - Tocar Música");
     Console.WriteLine("4 - Instalar Aplicativo");
-    Console.WriteLine("5 - Sair");
+    Console.WriteLine("5 - Ver configurações");
+    Console.WriteLine("6 - Sair");
     Console.WriteLine("=========================");
-    Console.Write("Escolha uma opção (1-5): ");
+    Console.Write("Escolha uma opção (1-6): ");
 
     switch (Console.ReadLine())
     {
@@ -105,10 +108,14 @@ while (menuPrincipal)
             break;
 
         case "5":
-        Console.Clear();
-        Console.WriteLine("O programa será encerrado");
-        menuPrincipal = false;
+        celularSelecionado.ExibirConfiguracoes();
         break;
+
+        case "6":
+            Console.Clear();
+            Console.WriteLine("O programa será encerrado");
+            menuPrincipal = false;
+            break;
     }
 }
 
