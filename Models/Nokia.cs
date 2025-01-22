@@ -7,9 +7,13 @@ namespace DesafioPOO.Models
         }
 
         //  Reescrita do Método "InstalarAplicativo"
-        public override string InstalarAplicativo(string nomeApp)
+        public override void TocarMusica()
         {
-            return $"O Aplicativo {nomeApp} foi instalado no seu Nokia com sucesso";
+            Console.Clear();
+            Console.WriteLine("Mas tem que me prender, tem que seduzir!");
+            Console.WriteLine("Pressione qualquer tecla para continuar");
+            Console.ReadLine();
+
         }
     }
 }

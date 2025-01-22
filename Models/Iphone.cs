@@ -7,9 +7,13 @@ namespace DesafioPOO.Models
         }
 
         // Reecrita do Método "InstalarAplicativo"
-        public override string InstalarAplicativo(string nomeApp)
+        public override void TocarMusica()
         {
-            return $"O aplicativo {nomeApp} foi instalado no Iphone";
+            Console.Clear();
+            Console.WriteLine("tuts tuts tuts tuts quero ver!");
+            Console.WriteLine("Pressione qualquer tecla para continuar");
+            Console.ReadLine();
+
         }
     }
 }
